@@ -1,5 +1,8 @@
 package net.steveson.solidgoldstairs;
 
+import net.minecraft.world.item.CreativeModeTabs;
+import net.steveson.solidgoldstairs.block.ModBlocks;
+import net.steveson.solidgoldstairs.item.ModItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -52,10 +55,7 @@ public class SolidGoldStairsMod {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-//        // Register the Deferred Register to the mod event bus so blocks get registered
-//        BLOCKS.register(modEventBus);
-//        // Register the Deferred Register to the mod event bus so items get registered
-//        ITEMS.register(modEventBus);
+
 //        // Register the Deferred Register to the mod event bus so tabs get registered
 //        CREATIVE_MODE_TABS.register(modEventBus);
 
@@ -63,6 +63,9 @@ public class SolidGoldStairsMod {
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -86,9 +89,9 @@ public class SolidGoldStairsMod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-//        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-//            event.accept(EXAMPLE_BLOCK_ITEM);
-//        }
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.CHISELED_QUARTZ_SLAB);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

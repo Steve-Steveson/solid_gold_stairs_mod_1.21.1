@@ -3,6 +3,8 @@
   "block.examplemod.example_block": "Example Block",
   "item.examplemod.example_item": "Example Item",
 
+  "block.solid_gold_stairs.chiseled_quartz_slab": "Chiseled Quartz Slab",
+
   "examplemod.configuration.title": "Example Mod Configs",
   "examplemod.configuration.section.examplemod.common.toml": "Example Mod Configs",
   "examplemod.configuration.section.examplemod.common.toml.title": "Example Mod Configs",
