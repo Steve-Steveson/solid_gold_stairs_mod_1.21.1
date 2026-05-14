@@ -20,11 +20,20 @@ public class ModBlocks {
             DeferredRegister.createBlocks(SolidGoldStairsMod.MOD_ID);
 
 
-//    public static final DeferredBlock<Block> CHISELED_QUARTZ_STAIRS = registerBlock("chiseled_quartz_stairs",
-//            ()-> new StairBlock(
-//                    BlockBehaviour.Properties.ofLegacyCopy(Blocks.CHISELED_QUARTZ_BLOCK)));
-    public static final DeferredBlock<Block> CHISELED_QUARTZ_SLAB = registerBlock("chiseled_quartz_slab",
+
+
+
+    public static final DeferredBlock<StairBlock> CHISELED_QUARTZ_STAIRS = registerBlock("chiseled_quartz_stairs",
+            ()-> new StairBlock( Blocks.CHISELED_QUARTZ_BLOCK.defaultBlockState(),
+                    BlockBehaviour.Properties.ofLegacyCopy(Blocks.CHISELED_QUARTZ_BLOCK)));
+    public static final DeferredBlock<SlabBlock> CHISELED_QUARTZ_SLAB = registerBlock("chiseled_quartz_slab",
             ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.CHISELED_QUARTZ_BLOCK)));
+
+    public static final DeferredBlock<StairBlock> QUARTZ_BRICK_STAIRS = registerBlock("quartz_brick_stairs",
+            ()-> new StairBlock( Blocks.QUARTZ_BRICKS.defaultBlockState(),
+                    BlockBehaviour.Properties.ofLegacyCopy(Blocks.QUARTZ_BRICKS)));
+    public static final DeferredBlock<SlabBlock> QUARTZ_BRICK_SLAB = registerBlock("quartz_brick_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.QUARTZ_BRICKS)));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

@@ -90,7 +90,11 @@ public class SolidGoldStairsMod {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+
+            event.accept(ModBlocks.CHISELED_QUARTZ_STAIRS);
             event.accept(ModBlocks.CHISELED_QUARTZ_SLAB);
+            event.accept(ModBlocks.QUARTZ_BRICK_STAIRS);
+            event.accept(ModBlocks.QUARTZ_BRICK_SLAB);
         }
     }
 
