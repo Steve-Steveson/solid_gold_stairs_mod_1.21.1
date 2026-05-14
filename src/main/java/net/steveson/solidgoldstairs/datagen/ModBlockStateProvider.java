@@ -39,6 +39,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
 
 
+        slabBlock(ModBlocks.COPPER_SLAB.get(), blockTexture(Blocks.COPPER_BLOCK), blockTexture(Blocks.COPPER_BLOCK));
+        slabBlock(ModBlocks.EXPOSED_COPPER_SLAB.get(), blockTexture(Blocks.EXPOSED_COPPER), blockTexture(Blocks.EXPOSED_COPPER));
+        slabBlock(ModBlocks.WEATHERED_COPPER_SLAB.get(), blockTexture(Blocks.WEATHERED_COPPER), blockTexture(Blocks.WEATHERED_COPPER));
+        slabBlock(ModBlocks.OXIDIZED_COPPER_SLAB.get(), blockTexture(Blocks.OXIDIZED_COPPER), blockTexture(Blocks.OXIDIZED_COPPER));
+        slabBlock(ModBlocks.WAXED_COPPER_SLAB.get(), blockTexture(Blocks.COPPER_BLOCK), blockTexture(Blocks.COPPER_BLOCK));
+        slabBlock(ModBlocks.WAXED_EXPOSED_COPPER_SLAB.get(), blockTexture(Blocks.EXPOSED_COPPER), blockTexture(Blocks.EXPOSED_COPPER));
+        slabBlock(ModBlocks.WAXED_WEATHERED_COPPER_SLAB.get(), blockTexture(Blocks.WEATHERED_COPPER), blockTexture(Blocks.WEATHERED_COPPER));
+        slabBlock(ModBlocks.WAXED_OXIDIZED_COPPER_SLAB.get(), blockTexture(Blocks.OXIDIZED_COPPER), blockTexture(Blocks.OXIDIZED_COPPER));
+
         blockItem(ModBlocks.COAL_STAIRS);
         blockItem(ModBlocks.COAL_SLAB);
         blockItem(ModBlocks.IRON_STAIRS);
@@ -61,6 +70,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.AMETHYST_STAIRS);
         blockItem(ModBlocks.AMETHYST_SLAB);
 
+
+
+        blockItem(ModBlocks.COPPER_SLAB);
+        blockItem(ModBlocks.EXPOSED_COPPER_SLAB);
+        blockItem(ModBlocks.WEATHERED_COPPER_SLAB);
+        blockItem(ModBlocks.OXIDIZED_COPPER_SLAB);
+        blockItem(ModBlocks.WAXED_COPPER_SLAB);
+        blockItem(ModBlocks.WAXED_EXPOSED_COPPER_SLAB);
+        blockItem(ModBlocks.WAXED_WEATHERED_COPPER_SLAB);
+        blockItem(ModBlocks.WAXED_OXIDIZED_COPPER_SLAB);
     }
 
     private void blockItem(DeferredBlock<?> deferredBlock) {

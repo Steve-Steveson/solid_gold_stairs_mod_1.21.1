@@ -7,16 +7,15 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.steveson.solidgoldstairs.SolidGoldStairsMod;
+import net.steveson.solidgoldstairs.block.custom.UncutWeatheringCopperSlabBlock;
+import net.steveson.solidgoldstairs.block.custom.WaxedCopperSlabBlock;
 import net.steveson.solidgoldstairs.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
@@ -117,8 +116,27 @@ public class ModBlocks {
     public static final DeferredBlock<SlabBlock> AMETHYST_SLAB = registerBlock("amethyst_slab",
             ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.AMETHYST_BLOCK)));
 
+//    public static final DeferredBlock<StairBlock> OXIDIZED_COPPER_STAIRS = registerBlock("oxidized_copper_stairs",
+//            ()-> new UncutWeatheringCopperStairBlock( Blocks.AMETHYST_BLOCK.defaultBlockState(),
+//                    BlockBehaviour.Properties.ofLegacyCopy(Blocks.AMETHYST_BLOCK)));
 
 
+    public static final DeferredBlock<SlabBlock> OXIDIZED_COPPER_SLAB = registerBlock("oxidized_copper_slab",
+            ()-> new UncutWeatheringCopperSlabBlock(WeatheringCopper.WeatherState.OXIDIZED, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OXIDIZED_COPPER)));
+    public static final DeferredBlock<SlabBlock> WEATHERED_COPPER_SLAB = registerBlock("weathered_copper_slab",
+            ()-> new UncutWeatheringCopperSlabBlock(WeatheringCopper.WeatherState.WEATHERED, BlockBehaviour.Properties.ofLegacyCopy(Blocks.WEATHERED_COPPER)));
+    public static final DeferredBlock<SlabBlock> EXPOSED_COPPER_SLAB = registerBlock("exposed_copper_slab",
+            ()-> new UncutWeatheringCopperSlabBlock(WeatheringCopper.WeatherState.EXPOSED, BlockBehaviour.Properties.ofLegacyCopy(Blocks.EXPOSED_COPPER)));
+    public static final DeferredBlock<SlabBlock> COPPER_SLAB = registerBlock("copper_slab",
+            ()-> new UncutWeatheringCopperSlabBlock(WeatheringCopper.WeatherState.UNAFFECTED, BlockBehaviour.Properties.ofLegacyCopy(Blocks.COPPER_BLOCK)));
+    public static final DeferredBlock<SlabBlock> WAXED_OXIDIZED_COPPER_SLAB = registerBlock("waxed_oxidized_copper_slab",
+            ()-> new WaxedCopperSlabBlock(WeatheringCopper.WeatherState.OXIDIZED, BlockBehaviour.Properties.ofLegacyCopy(Blocks.WAXED_OXIDIZED_COPPER)));
+    public static final DeferredBlock<SlabBlock> WAXED_WEATHERED_COPPER_SLAB = registerBlock("waxed_weathered_copper_slab",
+            ()-> new WaxedCopperSlabBlock(WeatheringCopper.WeatherState.WEATHERED, BlockBehaviour.Properties.ofLegacyCopy(Blocks.WAXED_WEATHERED_COPPER)));
+    public static final DeferredBlock<SlabBlock> WAXED_EXPOSED_COPPER_SLAB = registerBlock("waxed_exposed_copper_slab",
+            ()-> new WaxedCopperSlabBlock(WeatheringCopper.WeatherState.EXPOSED, BlockBehaviour.Properties.ofLegacyCopy(Blocks.WAXED_EXPOSED_COPPER)));
+    public static final DeferredBlock<SlabBlock> WAXED_COPPER_SLAB = registerBlock("waxed_copper_slab",
+            ()-> new WaxedCopperSlabBlock(WeatheringCopper.WeatherState.UNAFFECTED, BlockBehaviour.Properties.ofLegacyCopy(Blocks.WAXED_COPPER_BLOCK)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

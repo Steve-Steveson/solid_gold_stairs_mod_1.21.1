@@ -39,14 +39,35 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.QUARTZ_BRICK_STAIRS.get())
                 .add(ModBlocks.QUARTZ_BRICK_SLAB.get())
                 .add(ModBlocks.AMETHYST_STAIRS.get())
-                .add(ModBlocks.AMETHYST_SLAB.get());
+                .add(ModBlocks.AMETHYST_SLAB.get())
+
+
+
+                .add(ModBlocks.COPPER_SLAB.get())
+                .add(ModBlocks.EXPOSED_COPPER_SLAB.get())
+                .add(ModBlocks.WEATHERED_COPPER_SLAB.get())
+                .add(ModBlocks.OXIDIZED_COPPER_SLAB.get())
+                .add(ModBlocks.WAXED_COPPER_SLAB.get())
+                .add(ModBlocks.WAXED_EXPOSED_COPPER_SLAB.get())
+                .add(ModBlocks.WAXED_WEATHERED_COPPER_SLAB.get())
+                .add(ModBlocks.WAXED_OXIDIZED_COPPER_SLAB.get());
+
 
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.IRON_STAIRS.get())
                 .add(ModBlocks.IRON_SLAB.get())
                 .add(ModBlocks.LAPIS_STAIRS.get())
-                .add(ModBlocks.LAPIS_SLAB.get());
+                .add(ModBlocks.LAPIS_SLAB.get())
 
+
+                .add(ModBlocks.COPPER_SLAB.get())
+                .add(ModBlocks.EXPOSED_COPPER_SLAB.get())
+                .add(ModBlocks.WEATHERED_COPPER_SLAB.get())
+                .add(ModBlocks.OXIDIZED_COPPER_SLAB.get())
+                .add(ModBlocks.WAXED_COPPER_SLAB.get())
+                .add(ModBlocks.WAXED_EXPOSED_COPPER_SLAB.get())
+                .add(ModBlocks.WAXED_WEATHERED_COPPER_SLAB.get())
+                .add(ModBlocks.WAXED_OXIDIZED_COPPER_SLAB.get());
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.GOLD_STAIRS.get())
                 .add(ModBlocks.GOLD_SLAB.get())
@@ -83,7 +104,16 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.NETHERITE_SLAB.get())
                 .add(ModBlocks.CHISELED_QUARTZ_SLAB.get())
                 .add(ModBlocks.QUARTZ_BRICK_SLAB.get())
-                .add(ModBlocks.AMETHYST_SLAB.get());
+                .add(ModBlocks.AMETHYST_SLAB.get())
+
+                .add(ModBlocks.COPPER_SLAB.get())
+                .add(ModBlocks.EXPOSED_COPPER_SLAB.get())
+                .add(ModBlocks.WEATHERED_COPPER_SLAB.get())
+                .add(ModBlocks.OXIDIZED_COPPER_SLAB.get())
+                .add(ModBlocks.WAXED_COPPER_SLAB.get())
+                .add(ModBlocks.WAXED_EXPOSED_COPPER_SLAB.get())
+                .add(ModBlocks.WAXED_WEATHERED_COPPER_SLAB.get())
+                .add(ModBlocks.WAXED_OXIDIZED_COPPER_SLAB.get());
 
 
         tag(BlockTags.GUARDED_BY_PIGLINS)

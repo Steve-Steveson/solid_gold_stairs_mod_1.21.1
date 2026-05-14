@@ -51,7 +51,22 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.AMETHYST_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.AMETHYST_SLAB.get()));
 
-
+        add(ModBlocks.OXIDIZED_COPPER_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.OXIDIZED_COPPER_SLAB.get()));
+        add(ModBlocks.WEATHERED_COPPER_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.WEATHERED_COPPER_SLAB.get()));
+        add(ModBlocks.EXPOSED_COPPER_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.EXPOSED_COPPER_SLAB.get()));
+        add(ModBlocks.COPPER_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.COPPER_SLAB.get()));
+        add(ModBlocks.WAXED_OXIDIZED_COPPER_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.WAXED_OXIDIZED_COPPER_SLAB.get()));
+        add(ModBlocks.WAXED_WEATHERED_COPPER_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.WAXED_WEATHERED_COPPER_SLAB.get()));
+        add(ModBlocks.WAXED_EXPOSED_COPPER_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.WAXED_EXPOSED_COPPER_SLAB.get()));
+        add(ModBlocks.WAXED_COPPER_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.WAXED_COPPER_SLAB.get()));
     }
 
     @Override

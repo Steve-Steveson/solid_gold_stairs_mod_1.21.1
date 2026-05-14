@@ -46,6 +46,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.AMETHYST_BLOCK, ModBlocks.AMETHYST_SLAB, recipeOutput);
 
 
+
+        registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.COPPER_BLOCK, ModBlocks.COPPER_SLAB, recipeOutput);
+        registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.EXPOSED_COPPER, ModBlocks.EXPOSED_COPPER_SLAB, recipeOutput);
+        registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.WEATHERED_COPPER, ModBlocks.WEATHERED_COPPER_SLAB, recipeOutput);
+        registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.OXIDIZED_COPPER, ModBlocks.OXIDIZED_COPPER_SLAB, recipeOutput);
+        registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.WAXED_COPPER_BLOCK, ModBlocks.WAXED_COPPER_SLAB, recipeOutput);
+        registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.WAXED_EXPOSED_COPPER, ModBlocks.WAXED_EXPOSED_COPPER_SLAB, recipeOutput);
+        registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.WAXED_WEATHERED_COPPER, ModBlocks.WAXED_WEATHERED_COPPER_SLAB, recipeOutput);
+        registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.WAXED_OXIDIZED_COPPER, ModBlocks.WAXED_OXIDIZED_COPPER_SLAB, recipeOutput);
     }
 
     private static void registerStairsCraftingRecipe(RecipeCategory category, ItemLike input, DeferredBlock<StairBlock> output, RecipeOutput recipeOutput){
