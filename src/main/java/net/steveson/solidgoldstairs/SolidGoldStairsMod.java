@@ -91,10 +91,26 @@ public class SolidGoldStairsMod {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
 
+            event.accept(ModBlocks.IRON_STAIRS);
+            event.accept(ModBlocks.IRON_SLAB);
+            event.accept(ModBlocks.GOLD_STAIRS);
+            event.accept(ModBlocks.GOLD_SLAB);
+
+            event.accept(ModBlocks.EMERALD_STAIRS);
+            event.accept(ModBlocks.EMERALD_SLAB);
+            event.accept(ModBlocks.LAPIS_STAIRS);
+            event.accept(ModBlocks.LAPIS_SLAB);
+            event.accept(ModBlocks.DIAMOND_STAIRS);
+            event.accept(ModBlocks.DIAMOND_SLAB);
+
             event.accept(ModBlocks.CHISELED_QUARTZ_STAIRS);
             event.accept(ModBlocks.CHISELED_QUARTZ_SLAB);
             event.accept(ModBlocks.QUARTZ_BRICK_STAIRS);
             event.accept(ModBlocks.QUARTZ_BRICK_SLAB);
+            event.accept(ModBlocks.AMETHYST_STAIRS);
+            event.accept(ModBlocks.AMETHYST_SLAB);
+
+
         }
     }
 

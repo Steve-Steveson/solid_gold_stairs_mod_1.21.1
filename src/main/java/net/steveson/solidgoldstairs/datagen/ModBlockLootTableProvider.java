@@ -16,13 +16,39 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+
+        dropSelf(ModBlocks.IRON_STAIRS.get());
+        dropSelf(ModBlocks.GOLD_STAIRS.get());
+
+        dropSelf(ModBlocks.EMERALD_STAIRS.get());
+        dropSelf(ModBlocks.LAPIS_STAIRS.get());
+        dropSelf(ModBlocks.DIAMOND_STAIRS.get());
+
         dropSelf(ModBlocks.CHISELED_QUARTZ_STAIRS.get());
         dropSelf(ModBlocks.QUARTZ_BRICK_STAIRS.get());
+        dropSelf(ModBlocks.AMETHYST_STAIRS.get());
+
+
+
+        add(ModBlocks.IRON_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.IRON_SLAB.get()));
+        add(ModBlocks.GOLD_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.GOLD_SLAB.get()));
+
+        add(ModBlocks.EMERALD_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.EMERALD_SLAB.get()));
+        add(ModBlocks.LAPIS_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.LAPIS_SLAB.get()));
+        add(ModBlocks.DIAMOND_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.DIAMOND_SLAB.get()));
 
         add(ModBlocks.CHISELED_QUARTZ_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.CHISELED_QUARTZ_SLAB.get()));
         add(ModBlocks.QUARTZ_BRICK_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.QUARTZ_BRICK_SLAB.get()));
+        add(ModBlocks.AMETHYST_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.AMETHYST_SLAB.get()));
+
 
     }
 
