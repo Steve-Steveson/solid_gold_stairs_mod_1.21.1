@@ -28,6 +28,15 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.QUARTZ_BRICK_STAIRS.get());
         dropSelf(ModBlocks.AMETHYST_STAIRS.get());
 
+        dropSelf(ModBlocks.OXIDIZED_COPPER_STAIRS.get());
+        dropSelf(ModBlocks.WEATHERED_COPPER_STAIRS.get());
+        dropSelf(ModBlocks.EXPOSED_COPPER_STAIRS.get());
+        dropSelf(ModBlocks.COPPER_STAIRS.get());
+        dropSelf(ModBlocks.WAXED_OXIDIZED_COPPER_STAIRS.get());
+        dropSelf(ModBlocks.WAXED_WEATHERED_COPPER_STAIRS.get());
+        dropSelf(ModBlocks.WAXED_EXPOSED_COPPER_STAIRS.get());
+        dropSelf(ModBlocks.WAXED_COPPER_STAIRS.get());
+
 
         add(ModBlocks.COAL_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.COAL_SLAB.get()));

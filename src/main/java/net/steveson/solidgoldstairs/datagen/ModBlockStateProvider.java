@@ -37,7 +37,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         stairsBlock(ModBlocks.AMETHYST_STAIRS.get(), blockTexture(Blocks.AMETHYST_BLOCK));
         slabBlock(ModBlocks.AMETHYST_SLAB.get(), blockTexture(Blocks.AMETHYST_BLOCK), blockTexture(Blocks.AMETHYST_BLOCK));
 
-
+        stairsBlock(ModBlocks.COPPER_STAIRS.get(), blockTexture(Blocks.COPPER_BLOCK));
+        stairsBlock(ModBlocks.EXPOSED_COPPER_STAIRS.get(), blockTexture(Blocks.EXPOSED_COPPER));
+        stairsBlock(ModBlocks.WEATHERED_COPPER_STAIRS.get(), blockTexture(Blocks.WEATHERED_COPPER));
+        stairsBlock(ModBlocks.OXIDIZED_COPPER_STAIRS.get(), blockTexture(Blocks.OXIDIZED_COPPER));
+        stairsBlock(ModBlocks.WAXED_COPPER_STAIRS.get(), blockTexture(Blocks.COPPER_BLOCK));
+        stairsBlock(ModBlocks.WAXED_EXPOSED_COPPER_STAIRS.get(), blockTexture(Blocks.EXPOSED_COPPER));
+        stairsBlock(ModBlocks.WAXED_WEATHERED_COPPER_STAIRS.get(), blockTexture(Blocks.WEATHERED_COPPER));
+        stairsBlock(ModBlocks.WAXED_OXIDIZED_COPPER_STAIRS.get(), blockTexture(Blocks.OXIDIZED_COPPER));
 
         slabBlock(ModBlocks.COPPER_SLAB.get(), blockTexture(Blocks.COPPER_BLOCK), blockTexture(Blocks.COPPER_BLOCK));
         slabBlock(ModBlocks.EXPOSED_COPPER_SLAB.get(), blockTexture(Blocks.EXPOSED_COPPER), blockTexture(Blocks.EXPOSED_COPPER));
@@ -70,7 +77,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.AMETHYST_STAIRS);
         blockItem(ModBlocks.AMETHYST_SLAB);
 
-
+        blockItem(ModBlocks.COPPER_STAIRS);
+        blockItem(ModBlocks.EXPOSED_COPPER_STAIRS);
+        blockItem(ModBlocks.WEATHERED_COPPER_STAIRS);
+        blockItem(ModBlocks.OXIDIZED_COPPER_STAIRS);
+        blockItem(ModBlocks.WAXED_COPPER_STAIRS);
+        blockItem(ModBlocks.WAXED_EXPOSED_COPPER_STAIRS);
+        blockItem(ModBlocks.WAXED_WEATHERED_COPPER_STAIRS);
+        blockItem(ModBlocks.WAXED_OXIDIZED_COPPER_STAIRS);
 
         blockItem(ModBlocks.COPPER_SLAB);
         blockItem(ModBlocks.EXPOSED_COPPER_SLAB);

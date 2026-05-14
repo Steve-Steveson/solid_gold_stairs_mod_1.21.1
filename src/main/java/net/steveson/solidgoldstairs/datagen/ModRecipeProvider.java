@@ -3,6 +3,7 @@ package net.steveson.solidgoldstairs.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
@@ -45,7 +46,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.AMETHYST_BLOCK, ModBlocks.AMETHYST_STAIRS, recipeOutput);
         registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.AMETHYST_BLOCK, ModBlocks.AMETHYST_SLAB, recipeOutput);
 
-
+        registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.COPPER_BLOCK, ModBlocks.COPPER_STAIRS, recipeOutput);
+        registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.EXPOSED_COPPER, ModBlocks.EXPOSED_COPPER_STAIRS, recipeOutput);
+        registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.WEATHERED_COPPER, ModBlocks.WEATHERED_COPPER_STAIRS, recipeOutput);
+        registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.OXIDIZED_COPPER, ModBlocks.OXIDIZED_COPPER_STAIRS, recipeOutput);
+        registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.WAXED_COPPER_BLOCK, ModBlocks.WAXED_COPPER_STAIRS, recipeOutput);
+        registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.WAXED_EXPOSED_COPPER, ModBlocks.WAXED_EXPOSED_COPPER_STAIRS, recipeOutput);
+        registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.WAXED_WEATHERED_COPPER, ModBlocks.WAXED_WEATHERED_COPPER_STAIRS, recipeOutput);
+        registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.WAXED_OXIDIZED_COPPER, ModBlocks.WAXED_OXIDIZED_COPPER_STAIRS, recipeOutput);
 
         registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.COPPER_BLOCK, ModBlocks.COPPER_SLAB, recipeOutput);
         registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.EXPOSED_COPPER, ModBlocks.EXPOSED_COPPER_SLAB, recipeOutput);
@@ -55,6 +63,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.WAXED_EXPOSED_COPPER, ModBlocks.WAXED_EXPOSED_COPPER_SLAB, recipeOutput);
         registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.WAXED_WEATHERED_COPPER, ModBlocks.WAXED_WEATHERED_COPPER_SLAB, recipeOutput);
         registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.WAXED_OXIDIZED_COPPER, ModBlocks.WAXED_OXIDIZED_COPPER_SLAB, recipeOutput);
+
+        registerWaxCraftingRecipe(ModBlocks.OXIDIZED_COPPER_STAIRS, ModBlocks.WAXED_OXIDIZED_COPPER_STAIRS, recipeOutput);
+        registerWaxCraftingRecipe(ModBlocks.WEATHERED_COPPER_STAIRS, ModBlocks.WAXED_WEATHERED_COPPER_STAIRS, recipeOutput);
+        registerWaxCraftingRecipe(ModBlocks.EXPOSED_COPPER_STAIRS, ModBlocks.WAXED_EXPOSED_COPPER_STAIRS, recipeOutput);
+        registerWaxCraftingRecipe(ModBlocks.COPPER_STAIRS, ModBlocks.WAXED_COPPER_STAIRS, recipeOutput);
+        registerWaxCraftingRecipe(ModBlocks.OXIDIZED_COPPER_SLAB, ModBlocks.WAXED_OXIDIZED_COPPER_SLAB, recipeOutput);
+        registerWaxCraftingRecipe(ModBlocks.WEATHERED_COPPER_SLAB, ModBlocks.WAXED_WEATHERED_COPPER_SLAB, recipeOutput);
+        registerWaxCraftingRecipe(ModBlocks.EXPOSED_COPPER_SLAB, ModBlocks.WAXED_EXPOSED_COPPER_SLAB, recipeOutput);
+        registerWaxCraftingRecipe(ModBlocks.COPPER_SLAB, ModBlocks.WAXED_COPPER_SLAB, recipeOutput);
     }
 
     private static void registerStairsCraftingRecipe(RecipeCategory category, ItemLike input, DeferredBlock<StairBlock> output, RecipeOutput recipeOutput){
@@ -64,10 +81,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("III")
                 .define('I', input)
                 .unlockedBy(getHasName(input), has(input))
-                .save(recipeOutput, SolidGoldStairsMod.MOD_ID + ":" + "crafting/" + getItemName(output.get()));
+                .save(recipeOutput, SolidGoldStairsMod.MOD_ID + ":crafting/" + getItemName(output.get()));
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), category, output.get())
                 .unlockedBy(getHasName(input), has(input))
-                .save(recipeOutput, SolidGoldStairsMod.MOD_ID + ":" + "stonecutting/" + getItemName(output.get()));
+                .save(recipeOutput, SolidGoldStairsMod.MOD_ID + ":stonecutting/" + getItemName(output.get()));
     }
 
     private static void registerSlabCraftingRecipe(RecipeCategory category, ItemLike input, DeferredBlock<SlabBlock> output, RecipeOutput recipeOutput){
@@ -75,11 +92,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("III")
                 .define('I', input)
                 .unlockedBy(getHasName(input), has(input))
-                .save(recipeOutput, SolidGoldStairsMod.MOD_ID + ":" + "crafting/" + getItemName(output.get()));
+                .save(recipeOutput, SolidGoldStairsMod.MOD_ID + ":crafting/" + getItemName(output.get()));
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), category, output.get(), 2)
                 .unlockedBy(getHasName(input), has(input))
-                .save(recipeOutput, SolidGoldStairsMod.MOD_ID + ":" + "stonecutting/" + getItemName(output.get()));
+                .save(recipeOutput, SolidGoldStairsMod.MOD_ID + ":stonecutting/" + getItemName(output.get()));
     }
 
+    private static void registerWaxCraftingRecipe(DeferredBlock<?> input, DeferredBlock<?> output, RecipeOutput recipeOutput) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, output.get())
+                .requires(input.get())
+                .requires(Items.HONEYCOMB)
+                .unlockedBy(getHasName(input), has(input))
+                .save(recipeOutput, SolidGoldStairsMod.MOD_ID + ":crafting/" + getItemName(output.get()) + "_from_honeycomb");
+    }
 
 }
