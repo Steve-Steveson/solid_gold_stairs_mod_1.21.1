@@ -1,17 +1,24 @@
 package net.steveson.solidgoldstairs.block;
 
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.steveson.solidgoldstairs.SolidGoldStairsMod;
 import net.steveson.solidgoldstairs.item.ModItems;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Supplier;
 
@@ -19,6 +26,39 @@ public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(SolidGoldStairsMod.MOD_ID);
 
+    public static final DeferredBlock<StairBlock> COAL_STAIRS = registerFuelBlock("coal_stairs",
+            ()-> new StairBlock( Blocks.COAL_BLOCK.defaultBlockState(),
+                    BlockBehaviour.Properties.ofLegacyCopy(Blocks.COAL_BLOCK)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+            }, 16000);
+    public static final DeferredBlock<SlabBlock> COAL_SLAB = registerFuelBlock("coal_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.COAL_BLOCK)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+            }, 8000);
 
 
     public static final DeferredBlock<StairBlock> IRON_STAIRS = registerBlock("iron_stairs",
@@ -53,7 +93,11 @@ public class ModBlocks {
     public static final DeferredBlock<SlabBlock> DIAMOND_SLAB = registerBlock("diamond_slab",
             ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.DIAMOND_BLOCK)));
 
-
+    public static final DeferredBlock<StairBlock> NETHERITE_STAIRS = registerBlockNetherite("netherite_stairs",
+            ()-> new StairBlock( Blocks.NETHERITE_BLOCK.defaultBlockState(),
+                    BlockBehaviour.Properties.ofLegacyCopy(Blocks.NETHERITE_BLOCK)));
+    public static final DeferredBlock<SlabBlock> NETHERITE_SLAB = registerBlockNetherite("netherite_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.NETHERITE_BLOCK)));
 
     public static final DeferredBlock<StairBlock> CHISELED_QUARTZ_STAIRS = registerBlock("chiseled_quartz_stairs",
             ()-> new StairBlock( Blocks.CHISELED_QUARTZ_BLOCK.defaultBlockState(),
@@ -81,10 +125,35 @@ public class ModBlocks {
         registerBlockItem(name, toReturn);
         return toReturn;
     }
-
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
         ModItems.ITEMS.register(name, ()-> new BlockItem(block.get(), new Item.Properties()));
     }
+
+
+    private static <T extends Block> DeferredBlock<T> registerFuelBlock(String name, Supplier<T> block, int burnTime) {
+        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
+        registerFuelBlockItem(name, toReturn, burnTime);
+        return toReturn;
+    }
+    private static <T extends Block> void registerFuelBlockItem(String name, DeferredBlock<T> block, int burnTime) {
+        ModItems.ITEMS.register(name, ()-> new BlockItem(block.get(), new Item.Properties()){
+            @Override
+            public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+                return burnTime;
+            }
+        });
+    }
+
+
+    private static <T extends Block> DeferredBlock<T> registerBlockNetherite(String name, Supplier<T> block) {
+        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItemNetherite(name, toReturn);
+        return toReturn;
+    }
+    private static <T extends Block> void registerBlockItemNetherite(String name, DeferredBlock<T> block) {
+        ModItems.ITEMS.register(name, ()-> new BlockItem(block.get(), new Item.Properties().fireResistant()));
+    }
+
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

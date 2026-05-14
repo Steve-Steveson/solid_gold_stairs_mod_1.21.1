@@ -1,5 +1,6 @@
 {
-
+  "block.solid_gold_stairs.coal_stairs": "Coal Stairs",
+  "block.solid_gold_stairs.coal_slab": "Coal Slab",
   "block.solid_gold_stairs.iron_stairs": "Iron Stairs",
   "block.solid_gold_stairs.iron_slab": "Iron Slab",
   "block.solid_gold_stairs.gold_stairs": "Gold Stairs",
@@ -11,7 +12,8 @@
   "block.solid_gold_stairs.lapis_slab": "Lapis Lazuli Slab",
   "block.solid_gold_stairs.diamond_stairs": "Diamond Stairs",
   "block.solid_gold_stairs.diamond_slab": "Diamond Slab",
-
+  "block.solid_gold_stairs.netherite_stairs": "Netherite Stairs",
+  "block.solid_gold_stairs.netherite_slab": "Netherite Slab",
   "block.solid_gold_stairs.chiseled_quartz_stairs": "Chiseled Quartz Stairs",
   "block.solid_gold_stairs.chiseled_quartz_slab": "Chiseled Quartz Slab",
   "block.solid_gold_stairs.quartz_brick_stairs": "Quartz Brick Stairs",

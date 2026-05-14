@@ -1,5 +1,7 @@
 {
   "values": [
+    "solid_gold_stairs:coal_stairs",
+    "solid_gold_stairs:coal_slab",
     "solid_gold_stairs:iron_stairs",
     "solid_gold_stairs:iron_slab",
     "solid_gold_stairs:gold_stairs",
@@ -10,6 +12,8 @@
     "solid_gold_stairs:lapis_slab",
     "solid_gold_stairs:diamond_stairs",
     "solid_gold_stairs:diamond_slab",
+    "solid_gold_stairs:netherite_stairs",
+    "solid_gold_stairs:netherite_slab",
     "solid_gold_stairs:chiseled_quartz_stairs",
     "solid_gold_stairs:chiseled_quartz_slab",
     "solid_gold_stairs:quartz_brick_stairs",
