@@ -2,10 +2,8 @@ package net.steveson.solidgoldstairs.datagen;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlabBlock;
@@ -56,6 +54,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('I', input)
                 .unlockedBy(getHasName(input), has(input))
                 .save(recipeOutput, SolidGoldStairsMod.MOD_ID + ":" + "crafting/" + getItemName(output.get()));
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), category, output.get())
+                .unlockedBy(getHasName(input), has(input))
+                .save(recipeOutput, SolidGoldStairsMod.MOD_ID + ":" + "stonecutting/" + getItemName(output.get()));
     }
 
     private static void registerSlabCraftingRecipe(RecipeCategory category, ItemLike input, DeferredBlock<SlabBlock> output, RecipeOutput recipeOutput){
@@ -64,6 +65,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('I', input)
                 .unlockedBy(getHasName(input), has(input))
                 .save(recipeOutput, SolidGoldStairsMod.MOD_ID + ":" + "crafting/" + getItemName(output.get()));
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), category, output.get(), 2)
+                .unlockedBy(getHasName(input), has(input))
+                .save(recipeOutput, SolidGoldStairsMod.MOD_ID + ":" + "stonecutting/" + getItemName(output.get()));
     }
 
 
