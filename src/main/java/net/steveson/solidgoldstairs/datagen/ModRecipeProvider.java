@@ -30,7 +30,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.IRON_BLOCK, ModBlocks.IRON_SLAB, recipeOutput);
         registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.GOLD_BLOCK, ModBlocks.GOLD_STAIRS, recipeOutput);
         registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.GOLD_BLOCK, ModBlocks.GOLD_SLAB, recipeOutput);
-
+        registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.REDSTONE_BLOCK, ModBlocks.REDSTONE_STAIRS, recipeOutput);
+        registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.REDSTONE_BLOCK, ModBlocks.REDSTONE_SLAB, recipeOutput);
         registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.EMERALD_BLOCK, ModBlocks.EMERALD_STAIRS, recipeOutput);
         registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.EMERALD_BLOCK, ModBlocks.EMERALD_SLAB, recipeOutput);
         registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, Blocks.LAPIS_BLOCK, ModBlocks.LAPIS_STAIRS, recipeOutput);

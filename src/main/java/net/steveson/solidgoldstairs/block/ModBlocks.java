@@ -14,10 +14,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.steveson.solidgoldstairs.SolidGoldStairsMod;
-import net.steveson.solidgoldstairs.block.custom.UncutWeatheringCopperSlabBlock;
-import net.steveson.solidgoldstairs.block.custom.UncutWeatheringCopperStairBlock;
-import net.steveson.solidgoldstairs.block.custom.WaxedCopperSlabBlock;
-import net.steveson.solidgoldstairs.block.custom.WaxedCopperStairBlock;
+import net.steveson.solidgoldstairs.block.custom.*;
 import net.steveson.solidgoldstairs.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
@@ -74,7 +71,11 @@ public class ModBlocks {
     public static final DeferredBlock<SlabBlock> GOLD_SLAB = registerBlock("gold_slab",
             ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.GOLD_BLOCK)));
 
-
+    public static final DeferredBlock<StairBlock> REDSTONE_STAIRS = registerBlock("redstone_stairs",
+            ()-> new PoweredStairBlock( Blocks.REDSTONE_BLOCK.defaultBlockState(),
+                    BlockBehaviour.Properties.ofLegacyCopy(Blocks.REDSTONE_BLOCK)));
+    public static final DeferredBlock<SlabBlock> REDSTONE_SLAB = registerBlock("redstone_slab",
+            ()-> new PoweredSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.REDSTONE_BLOCK)));
 
     public static final DeferredBlock<StairBlock> EMERALD_STAIRS = registerBlock("emerald_stairs",
             ()-> new StairBlock( Blocks.EMERALD_BLOCK.defaultBlockState(),

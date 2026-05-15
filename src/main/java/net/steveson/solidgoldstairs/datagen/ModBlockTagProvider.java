@@ -25,7 +25,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.IRON_SLAB.get())
                 .add(ModBlocks.GOLD_STAIRS.get())
                 .add(ModBlocks.GOLD_SLAB.get())
-
+                .add(ModBlocks.REDSTONE_STAIRS.get())
+                .add(ModBlocks.REDSTONE_SLAB.get())
                 .add(ModBlocks.EMERALD_STAIRS.get())
                 .add(ModBlocks.EMERALD_SLAB.get())
                 .add(ModBlocks.LAPIS_STAIRS.get())
@@ -123,7 +124,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.COAL_SLAB.get())
                 .add(ModBlocks.IRON_SLAB.get())
                 .add(ModBlocks.GOLD_SLAB.get())
-
+                .add(ModBlocks.REDSTONE_SLAB.get())
                 .add(ModBlocks.EMERALD_SLAB.get())
                 .add(ModBlocks.LAPIS_SLAB.get())
                 .add(ModBlocks.DIAMOND_SLAB.get())

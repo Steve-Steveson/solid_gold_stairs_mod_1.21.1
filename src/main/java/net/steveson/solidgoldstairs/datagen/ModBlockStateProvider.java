@@ -22,7 +22,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         slabBlock(ModBlocks.IRON_SLAB.get(), blockTexture(Blocks.IRON_BLOCK), blockTexture(Blocks.IRON_BLOCK));
         stairsBlock(ModBlocks.GOLD_STAIRS.get(), blockTexture(Blocks.GOLD_BLOCK));
         slabBlock(ModBlocks.GOLD_SLAB.get(), blockTexture(Blocks.GOLD_BLOCK), blockTexture(Blocks.GOLD_BLOCK));
-
+        stairsBlock(ModBlocks.REDSTONE_STAIRS.get(), blockTexture(Blocks.REDSTONE_BLOCK));
+        slabBlock(ModBlocks.REDSTONE_SLAB.get(), blockTexture(Blocks.REDSTONE_BLOCK), blockTexture(Blocks.REDSTONE_BLOCK));
         stairsBlock(ModBlocks.EMERALD_STAIRS.get(), blockTexture(Blocks.EMERALD_BLOCK));
         slabBlock(ModBlocks.EMERALD_SLAB.get(), blockTexture(Blocks.EMERALD_BLOCK), blockTexture(Blocks.EMERALD_BLOCK));
         stairsBlock(ModBlocks.LAPIS_STAIRS.get(), blockTexture(Blocks.LAPIS_BLOCK));
@@ -61,7 +62,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.IRON_SLAB);
         blockItem(ModBlocks.GOLD_STAIRS);
         blockItem(ModBlocks.GOLD_SLAB);
-
+        blockItem(ModBlocks.REDSTONE_STAIRS);
+        blockItem(ModBlocks.REDSTONE_SLAB);
         blockItem(ModBlocks.EMERALD_STAIRS);
         blockItem(ModBlocks.EMERALD_SLAB);
         blockItem(ModBlocks.LAPIS_STAIRS);

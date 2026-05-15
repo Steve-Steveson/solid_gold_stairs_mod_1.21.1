@@ -19,7 +19,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.COAL_STAIRS.get());
         dropSelf(ModBlocks.IRON_STAIRS.get());
         dropSelf(ModBlocks.GOLD_STAIRS.get());
-
+        dropSelf(ModBlocks.REDSTONE_STAIRS.get());
         dropSelf(ModBlocks.EMERALD_STAIRS.get());
         dropSelf(ModBlocks.LAPIS_STAIRS.get());
         dropSelf(ModBlocks.DIAMOND_STAIRS.get());
@@ -44,7 +44,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createSlabItemTable(ModBlocks.IRON_SLAB.get()));
         add(ModBlocks.GOLD_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.GOLD_SLAB.get()));
-
+        add(ModBlocks.REDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.REDSTONE_SLAB.get()));
         add(ModBlocks.EMERALD_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.EMERALD_SLAB.get()));
         add(ModBlocks.LAPIS_SLAB.get(),
