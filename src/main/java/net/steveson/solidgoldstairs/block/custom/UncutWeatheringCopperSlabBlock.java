@@ -39,25 +39,29 @@ public class UncutWeatheringCopperSlabBlock extends SlabBlock implements Weather
     /**
      * Get the next oxidation stage block
      */
-    public Optional<Block> getNextBlock() {
-        return switch (this.weatherState) {
-            case UNAFFECTED -> Optional.of(ModBlocks.EXPOSED_COPPER_SLAB.get());
-            case EXPOSED -> Optional.of(ModBlocks.WEATHERED_COPPER_SLAB.get());
-            case WEATHERED -> Optional.of(ModBlocks.OXIDIZED_COPPER_SLAB.get());
-            case OXIDIZED -> Optional.empty();
-        };
+    public static Optional<Block> getNextBlock(Block block) {
+        if (block == ModBlocks.COPPER_SLAB.get()) {
+            return Optional.of(ModBlocks.EXPOSED_COPPER_SLAB.get());
+        } else if (block == ModBlocks.EXPOSED_COPPER_SLAB.get()) {
+            return Optional.of(ModBlocks.WEATHERED_COPPER_SLAB.get());
+        } else if (block == ModBlocks.WEATHERED_COPPER_SLAB.get()) {
+            return Optional.of(ModBlocks.OXIDIZED_COPPER_SLAB.get());
+        }
+        return Optional.empty();
     }
 
     /**
      * Get the previous oxidation stage block (for axe scraping)
      */
-    public Optional<Block> getPreviousBlock() {
-        return switch (this.weatherState) {
-            case UNAFFECTED -> Optional.empty();
-            case EXPOSED -> Optional.of(ModBlocks.COPPER_SLAB.get());
-            case WEATHERED -> Optional.of(ModBlocks.EXPOSED_COPPER_SLAB.get());
-            case OXIDIZED -> Optional.of(ModBlocks.WEATHERED_COPPER_SLAB.get());
-        };
+    public static Optional<Block> getPreviousBlock(Block block) {
+        if (block == ModBlocks.EXPOSED_COPPER_SLAB.get()) {
+            return Optional.of(ModBlocks.COPPER_SLAB.get());
+        } else if (block == ModBlocks.WEATHERED_COPPER_SLAB.get()) {
+            return Optional.of(ModBlocks.EXPOSED_COPPER_SLAB.get());
+        } else if (block == ModBlocks.OXIDIZED_COPPER_SLAB.get()) {
+            return Optional.of(ModBlocks.WEATHERED_COPPER_SLAB.get());
+        }
+        return Optional.empty();
     }
 
     /**
@@ -111,7 +115,7 @@ public class UncutWeatheringCopperSlabBlock extends SlabBlock implements Weather
 
         // Handle axe scraping to reduce oxidation
         if (stack.is(ItemTags.AXES)) {
-            Optional<Block> previous = getPreviousBlock();
+            Optional<Block> previous = getPreviousBlock(state.getBlock());
             if (previous.isPresent()) {
 
                 level.playSound(player, pos, SoundEvents.AXE_SCRAPE, SoundSource.BLOCKS, 1.0F, 1.0F);
@@ -134,11 +138,11 @@ public class UncutWeatheringCopperSlabBlock extends SlabBlock implements Weather
 
     @Override
     public Optional<Block> getPreviousBlockGeneric(Block block) {
-        return getPreviousBlock();
+        return getPreviousBlock(block);
     }
 
     @Override
     public Optional<Block> getNextBlockGeneric(Block block) {
-        return getNextBlock();
+        return getNextBlock(block);
     }
 }
